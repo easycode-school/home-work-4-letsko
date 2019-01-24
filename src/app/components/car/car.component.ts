@@ -11,34 +11,34 @@ export class CarComponent implements OnInit {
     title: 'Audi A6',
     mileage: 0,
     fuelTankValue: 65,
-    fuel: 5
+    fuel: 5,
+    options: [
+      {
+        optionName: 'Вид топлива',
+        optionVal: 'бензин',
+      },
+      {
+        optionName: 'Объем двигателя',
+        optionVal: '1.8 л',
+      },
+      {
+        optionName: 'Максимальная скорость',
+        optionVal: '200 км/ч',
+      },
+      {
+        optionName: 'Тип привода',
+        optionVal: 'передний',
+      },
+      {
+        optionName: 'Тип КПП',
+        optionVal: 'механика',
+      },
+      {
+        optionName: 'Количество дверей',
+        optionVal: 5,
+      },
+    ]
   };
-  public options = [
-    {
-      optionName: 'Вид топлива',
-      optionVal: 'бензин',
-    },
-    {
-      optionName: 'Объем двигателя',
-      optionVal: '1.8 л',
-    },
-    {
-      optionName: 'Максимальная скорость',
-      optionVal: '200 км/ч',
-    },
-    {
-      optionName: 'Тип привода',
-      optionVal: 'передний',
-    },
-    {
-      optionName: 'Тип КПП',
-      optionVal: 'механика',
-    },
-    {
-      optionName: 'Количество дверей',
-      optionVal: 5,
-    },
-  ];
 
   /**
    * drive - обработчик события отправкм формы "drive-action"
