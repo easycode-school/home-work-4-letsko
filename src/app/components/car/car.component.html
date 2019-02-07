@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 d-flex justify-content-center car-img">
+      <img src="http://pngimg.com/uploads/audi/audi_PNG1757.png">
+    </div>       
+    <div class="col-12 col-md-6 pt-5">
+
+      <ul>
+        <h3>"{{ carInfo.title }}"</h3>
+        <li>Пробег: {{ carInfo.mileage }} км</li>
+        <li>Объем топливного бака: {{ carInfo.fuelTankValue }} л</li>
+        <li>Текущее количество толива: {{ carInfo.fuel }} л</li>
+      </ul>
+      
+      <ul>
+        <h4>Дополнительная информация</h4>
+        <li *ngFor="let option of carInfo.options ">{{ option.optionName }} :  {{option.optionVal}}</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <form class="col-6" name="drive-action" (submit)="drive(kilometersInput)">
+      <div class="form-group col-md-12">
+        <input type="text" #kilometersInput class="form-control"placeholder="Введите количество километров">
+        <button type="submit" class="btn btn-secondary mt-2">Ехать</button>
+      </div>
+    </form>
+    <form *ngIf="!carInfo.fuel" class="col-6" name="refuel-action" (submit)="refuel(fuelInput)">
+      <div class="form-group col-md-12 refuel-action">
+        <input type="text" class="form-control" #fuelInput placeholder="Введите количество топлива">
+        <button type="submit" class="btn btn-secondary mt-2">Заправить</button>
+      </div>
+    </form>
+  </div>
+</div>
